@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,53 +10,61 @@
       rel="stylesheet"
     />
   </head>
-  <body class="bg-gray-50">
-    <!-- Main Wrapper Box -->
-<!-- Main Wrapper Box: Increased max width from xl to 6xl -->
-<div class="max-w-6xl w-full mx-auto my-4 sm:my-8 p-4 sm:p-8 bg-white rounded-lg shadow-lg">
-  
-  <!-- Top Row: Square Profile Image (Left) and Header Info (Right) -->
-  <!-- Changed justify-between to justify-start and added a larger gap -->
-  <div class="flex items-center justify-start gap-12 mb-6">
-    
-    <!-- Left Side: Profile Image with Sharp Square Black and Blue Frame Box -->
-    <div class="flex-shrink-0 p-1 bg-white border-4 border-black ring-4 ring-blue-500">
-      <img
-        class="w-32 h-32 object-contain"
-        src="images/LaFleurJocelynID_Photo.JPG"
-        alt="Jocelyn La Fleur"
-      />
-    </div>
+  <body class="bg-gray-50 px-4">
+    <!-- Main Wrapper Box: Changed max-w-6xl to max-w-3xl so it stays compact and elegant on desktop -->
+    <div class="max-w-3xl w-full mx-auto my-6 sm:my-12 p-5 sm:p-8 bg-white rounded-lg shadow-lg">
+      
+      <!-- Top Row: Profile Image and Header Info (Stacked on mobile, side-by-side on desktop) -->
+      <div class="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-6 sm:gap-12 mb-8 pb-6 border-b border-gray-100">
+        
+        <!-- Left Side: Profile Image with Sharp Square Black and Blue Frame Box (Centered on mobile) -->
+        <div class="flex-shrink-0 p-1 bg-white border-4 border-black ring-4 ring-blue-500">
+          <img
+            class="w-32 h-32 object-contain"
+            src="images/LaFleurJocelynID_Photo.JPG"
+            alt="Jocelyn La Fleur"
+          />
+        </div>
 
-        <!-- Right Side: Right-Aligned Title Info -->
-        <div class="text-right flex-grow">
-          <h1 class="text-3xl font-semibold mt-2">Jocelyn La Fleur</h1>
-          <h2 class="text-xl font-medium text-gray-600">
+        <!-- Right Side: Title & Contact Info (Centered on mobile, right-aligned on desktop) -->
+        <div class="text-center sm:text-right flex-grow w-full sm:w-auto">
+          <h1 class="text-2xl sm:text-3xl font-semibold text-gray-900">Jocelyn La Fleur</h1>
+          <h2 class="text-lg sm:text-xl font-medium text-gray-600 mb-4 sm:mb-3">
             Yale University
           </h2>
-                <!-- Contact Section -->
-      <div class="mb-2">
-        <p class="text-gray-600 leading-relaxed">
-          <strong>Email:</strong>
-          <a class="text-blue-600 hover:underline" href="mailto:jocelyn.lafleur@yale.edu">jocelyn.lafleur@yale.edu</a><br />
-          <strong>Phone:</strong> +1 (267) 254-4533
-        </p>
-      </div>
+          
+          <!-- Contact Section -->
+          <div class="text-sm sm:text-base text-gray-600 leading-relaxed break-all sm:break-normal">
+            <p>
+              <strong class="text-gray-800">Email:</strong>
+              <a class="text-blue-600 hover:underline" href="mailto:jocelyn.lafleur@yale.edu">jocelyn.lafleur@yale.edu</a>
+            </p>
+            <p class="mt-1">
+              <strong class="text-gray-800">Phone:</strong> +1 (267) 254-4533
+            </p>
+          </div>
         </div>
       </div> <!-- Closes the Top Row Flexbox -->
 
-      <!-- Bottom Row: About Me Section -->
-      <div class="text-center mb-6">
-        <h3 class="text-2xl font-semibold mb-2">About Me</h3>
-        <p class="text-gray-600 text-justify md:text-center leading-relaxed">
+      <!-- Bottom Row: About Me Section (Clean justification and responsive spacing) -->
+      <div class="text-sm sm:text-base text-gray-700 leading-relaxed">
+        <h3 class="text-xl sm:text-2xl font-semibold text-gray-900 mb-3 text-center sm:text-left">About Me</h3>
+        
+        <p class="text-justify sm:text-left text-gray-600">
           Welcome! My name is Jocelyn La Fleur and I am a 5th year PhD Candidate at Yale School of the Environment.
           My research incorporates tools and methods from energy economics, network economics, and computational economics. My research focus is in the adoption and diffusion of renewable energy technologies, with a primary focus in electric vehicles (EVs) and a secondary focus in solar photovoltaics (PVs). Using tools from empirical game theory, natural language processing (NLP), and spatial econometrics, I investigate the barriers to achieving a widespread and sustainable national EV charging station network in the U.S. for both infrastructure builders and consumers and the current welfare consequences for both parties.
         </p>
-        <p class="text-gray-600 mt-4 font-medium">
-          I am on the 2026-27 job market. Please see a link to my CV 
-          <a href="documents/LaFleurJocelynCurriculumVitae_Final.pdf" target="_blank" class="text-blue-600 hover:underline font-bold">here</a>.
-        </p>
+        
+        <!-- Job Market Announcement Box -->
+        <div class="mt-6 p-4 bg-blue-50 border border-blue-100 rounded-md text-center sm:text-left">
+          <p class="text-blue-900 font-medium">
+            🎓 I am on the 2026-27 job market. Please see a link to my CV 
+            <a href="documents/LaFleurJocelynCurriculumVitae_Final.pdf" target="_blank" class="text-blue-600 hover:underline font-bold inline-block ml-1">here</a>.
+          </p>
+        </div>
       </div>
+
+    </div> <!-- Closes Main Wrapper Box -->
 
       <hr class="border-gray-200 mb-6" />
 <!-- JOB MARKET PAPER SECTION-->
