@@ -1,0 +1,13 @@
+User-agent: *
+
+Disallow: /
+
+Disallow: /categories/
+
+Disallow: /research/
+
+Disallow: /publications/
+
+Disallow: /tags/
+
+Disallow: /teaching/
