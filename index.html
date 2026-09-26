@@ -4,22 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Academic Personal Webpage</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.17/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
+    <!-- Upgraded to Tailwind v3 Play CDN for native dark mode support -->
+    <script src="https://tailwindcss.com"></script>
+    <script>
+      // Configure Tailwind to use the 'class' strategy for dark mode toggling
+      tailwind.config = {
+        darkMode: 'class',
+      }
+    </script>
   </head>
-  <body class="bg-gray-50">
+  <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 min-h-screen pb-12">
+    
+    <!-- Night Mode Toggle Button Container -->
+    <div class="max-w-xl mx-auto pt-6 flex justify-end px-4">
+      <button 
+        onclick="toggleDarkMode()" 
+        class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg font-medium shadow hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+      >
+        🌙 Toggle Night Mode
+      </button>
+    </div>
+
     <!-- Main Wrapper Box -->
-    <div class="max-w-xl mx-auto my-8 p-6 bg-white rounded-lg shadow-lg">
+    <div class="max-w-xl mx-auto my-4 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg border dark:border-gray-700 transition-colors duration-300">
       
       <!-- Top Row: Square Profile Image (Left) and Header Info (Right) -->
       <div class="flex items-center justify-between gap-6 mb-6">
         
-        <!-- Left Side: Profile Image with Sharp Square Black and Blue Frame Box -->
-        <div class="flex-shrink-0 p-1 bg-white border-4 border-black ring-4 ring-blue-500">
+        <!-- Left Side: Profile Image with Zero-Whitespace Frame Box -->
+        <div class="flex-shrink-0">
           <img
-            class="w-32 h-32 object-contain"
+            class="w-32 h-32 object-cover border-4 border-black dark:border-white ring-4 ring-blue-500"
             src="images/me_profile.JPG"
             alt="Jocelyn La Fleur"
           />
@@ -27,8 +42,8 @@
 
         <!-- Right Side: Right-Aligned Title Info -->
         <div class="text-right flex-grow">
-          <h1 class="text-3xl font-semibold mt-2">Jocelyn La Fleur</h1>
-          <h2 class="text-xl font-medium text-gray-600">
+          <h1 class="text-3xl font-semibold mt-2 text-gray-900 dark:text-white">Jocelyn La Fleur</h1>
+          <h2 class="text-xl font-medium text-gray-600 dark:text-gray-300">
             Yale University
           </h2>
         </div>
@@ -36,76 +51,75 @@
 
       <!-- Bottom Row: About Me Section -->
       <div class="text-center mb-6">
-        <h3 class="text-2xl font-semibold mb-2">About Me</h3>
-        <p class="text-gray-600 text-justify md:text-center leading-relaxed">
+        <h3 class="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">About Me</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-justify md:text-center leading-relaxed">
           Welcome! My name is Jocelyn La Fleur and I am a 5th year PhD Candidate at Yale School of the Environment.
           My research incorporates tools and methods from energy economics, network economics, and computational economics. My research focus is in the adoption and diffusion of renewable energy technologies, with a primary focus in electric vehicles (EVs) and a secondary focus in solar photovoltaics (PVs). Using tools from empirical game theory, natural language processing (NLP), and spatial econometrics, I investigate the barriers to achieving a widespread and sustainable national EV charging station network in the U.S. for both infrastructure builders and consumers and the current welfare consequences for both parties.
         </p>
-        <p class="text-gray-600 mt-4 font-medium">
+        <p class="text-gray-600 dark:text-gray-300 mt-4 font-medium">
           I am on the 2026-27 job market. Please see a link to my CV 
-          <a href="documents/LaFleurJocelynCurriculumVitae_Final.pdf" class="text-blue-600 hover:underline font-bold">here</a>.
+          <a href="documents/LaFleurJocelynCurriculumVitae_Final.pdf" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline font-bold">here</a>.
         </p>
       </div>
 
-      <hr class="border-gray-200 mb-6" />
+      <hr class="border-gray-200 dark:border-gray-700 mb-6" />
 
       <!-- Publications Section -->
       <div class="mb-6">
-        <h3 class="text-2xl font-semibold mb-2">Publications</h3>
-        <!-- Note: Using a single column layout here since max-w-xl is too narrow for 3 columns side-by-side -->
+        <h3 class="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">Publications</h3>
         <div class="grid grid-cols-1 gap-4">
-          <div class="bg-gray-100 p-4 rounded-lg">
-            <p class="font-medium">The Title of Your Publication</p>
-            <p class="italic text-sm mb-2">Author, A., & Coauthor, B. (Year)</p>
-            <p class="text-gray-600 text-sm">Journal Name, volume(issue), pages</p>
-            <a href="#" class="text-blue-600 hover:underline text-sm font-semibold">DOI</a>
+          <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
+            <p class="font-medium text-gray-900 dark:text-white">The Title of Your Publication</p>
+            <p class="italic text-sm text-gray-600 dark:text-gray-400 mb-2">Author, A., & Coauthor, B. (Year)</p>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">Journal Name, volume(issue), pages</p>
+            <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline text-sm font-semibold">DOI</a>
           </div>
-          <div class="bg-gray-100 p-4 rounded-lg">
-            <p class="font-medium">The Title of Your Publication</p>
-            <p class="italic text-sm mb-2">Author, A., & Coauthor, B. (Year)</p>
-            <p class="text-gray-600 text-sm">Journal Name, volume(issue), pages</p>
-            <a href="#" class="text-blue-600 hover:underline text-sm font-semibold">DOI</a>
-          </div>
-          <div class="bg-gray-100 p-4 rounded-lg">
-            <p class="font-medium">The Title of Your Publication</p>
-            <p class="italic text-sm mb-2">Author, A., & Coauthor, B. (Year)</p>
-            <p class="text-gray-600 text-sm">Journal Name, volume(issue), pages</p>
-            <a href="#" class="text-blue-600 hover:underline text-sm font-semibold">DOI</a>
+          <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
+            <p class="font-medium text-gray-900 dark:text-white">The Title of Your Publication</p>
+            <p class="italic text-sm text-gray-600 dark:text-gray-400 mb-2">Author, A., & Coauthor, B. (Year)</p>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">Journal Name, volume(issue), pages</p>
+            <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline text-sm font-semibold">DOI</a>
           </div>
         </div>
       </div>
 
-      <hr class="border-gray-200 mb-6" />
+      <hr class="border-gray-200 dark:border-gray-700 mb-6" />
 
       <!-- Education Section -->
       <div class="mb-6">
-        <h3 class="text-2xl font-semibold mb-2">Education</h3>
-        <ul class="list-disc pl-5 text-gray-600 space-y-1">
+        <h3 class="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">Education</h3>
+        <ul class="list-disc pl-5 text-gray-600 dark:text-gray-300 space-y-1">
           <li>Ph.D., Environmental Economics, Yale University, 2027 (Expected)</li>
           <li>MPhil, Environmental Economics, Yale University, 2025</li>
           <li>B.S./MBS 4+1, Environmental and Resource Economics/Geospatial Information Systems and Technology (GIS & T), Rutgers University, New Brunswick, 2021-22</li>
         </ul>
       </div>
 
-      <hr class="border-gray-200 mb-6" />
+      <hr class="border-gray-200 dark:border-gray-700 mb-6" />
 
       <!-- Contact Section -->
       <div class="mb-2">
-        <h3 class="text-2xl font-semibold mb-2">Contact</h3>
-        <p class="text-gray-600 leading-relaxed">
+        <h3 class="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">Contact</h3>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
           <strong>Email:</strong>
-          <a class="text-blue-600 hover:underline" href="mailto:jocelyn.lafleur@yale.edu">jocelyn.lafleur@yale.edu</a><br />
+          <a class="text-blue-600 dark:text-blue-400 hover:underline" href="mailto:jocelyn.lafleur@yale.edu">jocelyn.lafleur@yale.edu</a><br />
           <strong>Phone:</strong> +1 (267) 254-4533
         </p>
       </div>
 
     </div> <!-- Closes the Main Wrapper Box -->
 
-    <!-- Footer Attribution (Outside of the box) -->
-    <div class="flex justify-center mb-8 text-gray-400 text-xs">
+    <!-- Footer Attribution -->
+    <div class="flex justify-center mb-8 text-gray-400 dark:text-gray-500 text-xs">
       The webpage template is taken from 
-      <a class="text-blue-500 hover:underline ml-1" href="https://github.com/onpix/minimal-academic-website" target="_blank" rel="noopener noreferrer">onpix</a>
+      <a class="text-blue-500 dark:text-blue-400 hover:underline ml-1" href="https://github.com" target="_blank" rel="noopener noreferrer">onpix</a>
     </div>
+
+    <!-- Script to Handle Night Mode Toggling -->
+    <script>
+      function toggleDarkMode() {
+        document.documentElement.classList.toggle('dark');
+      }
+    </script>
   </body>
 </html>
-
