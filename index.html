@@ -13,25 +13,63 @@
   <body class="bg-gray-50 px-4">
 
     <!-- Fixed Top Banner -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-blue-900 text-white shadow-md">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo / Brand Name -->
-                <div class="font-bold text-xl tracking-tight">
-                    
-                </div>
-                <!-- Navigation Links -->
-                <div class="flex space-x-6 font-medium">
-                    <a href="#home" class="hover:text-blue-200 transition duration-150">Home</a>
-                    <a href="#jobmarketpaper" class="hover:text-blue-200 transition duration-150">Job Market Paper</a>
-                    <a href="#wip" class="hover:text-blue-200 transition duration-150">Works in Progress</a>
-                    <a href="#pubs" class="hover:text-blue-200 transition duration-150">Publications</a>
-                  <a href="#teaching" class="hover:text-blue-200 transition duration-150">Teaching</a>
-                  <a href="#education" class="hover:text-blue-200 transition duration-150">Education</a>
-                </div>
+<nav class="fixed top-0 left-0 right-0 z-50 bg-blue-900 text-white shadow-md">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo / Brand Name -->
+            <div class="font-bold text-xl tracking-tight">
+                
+            </div>
+            
+            <!-- Desktop Navigation Links (Hidden on Mobile) -->
+            <div class="hidden md:flex space-x-6 font-medium">
+                <a href="#home" class="hover:text-blue-200 transition duration-150">Home</a>
+                <a href="#jobmarketpaper" class="hover:text-blue-200 transition duration-150">Job Market Paper</a>
+                <a href="#wip" class="hover:text-blue-200 transition duration-150">Works in Progress</a>
+                <a href="#pubs" class="hover:text-blue-200 transition duration-150">Publications</a>
+                <a href="#teaching" class="hover:text-blue-200 transition duration-150">Teaching</a>
+                <a href="#education" class="hover:text-blue-200 transition duration-150">Education</a>
+            </div>
+
+            <!-- Mobile Hamburger Button (Hidden on Desktop) -->
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-btn" class="outline-none mobile-menu-button focus:outline-none">
+                    <svg class="w-6 h-6 hover:text-blue-200" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                        <path d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
         </div>
-    </nav>
+    </div>
+
+    <!-- Mobile Dropdown Menu (Hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-blue-800 px-4 pt-2 pb-4 space-y-2 font-medium shadow-inner">
+        <a href="#home" class="block py-2 px-4 text-sm hover:bg-blue-700 rounded transition duration-150">Home</a>
+        <a href="#jobmarketpaper" class="block py-2 px-4 text-sm hover:bg-blue-700 rounded transition duration-150">Job Market Paper</a>
+        <a href="#wip" class="block py-2 px-4 text-sm hover:bg-blue-700 rounded transition duration-150">Works in Progress</a>
+        <a href="#pubs" class="block py-2 px-4 text-sm hover:bg-blue-700 rounded transition duration-150">Publications</a>
+        <a href="#teaching" class="block py-2 px-4 text-sm hover:bg-blue-700 rounded transition duration-150">Teaching</a>
+        <a href="#education" class="block py-2 px-4 text-sm hover:bg-blue-700 rounded transition duration-150">Education</a>
+    </div>
+</nav>
+
+<!-- JavaScript to Toggle Menu -->
+<script>
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+
+    // Close menu when a link is clicked
+    const links = menu.querySelectorAll('a');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.add('hidden');
+        });
+    });
+</script>
 
     <section id="home" class="pt-20">
     <!-- Main Wrapper Box: Changed max-w-6xl to max-w-3xl so it stays compact and elegant on desktop -->
